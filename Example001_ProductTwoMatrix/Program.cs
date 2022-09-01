@@ -22,7 +22,10 @@ void PrintMatrix(int[,] matrix)         //Функция вывода матри
 int[] ProductMatrix(int[] matrix length, int width)      //Функция умножения матриц
 {
     int[,] matrix2 = new int[length, width];
+    //matrix2 = new int * matrix[m];
     for(int i = 0; i < matrix.GetLength(0); i++)
+
+        //matrix2[i] = new int matrix1[n];
         for(int j = 0; j < matrix1.GetLength(1); j++)
 
             matrix2[i,j] = 0;
@@ -31,19 +34,6 @@ int[] ProductMatrix(int[] matrix length, int width)      //Функция умн
                 return new int[]{i,j};
     return new int[] {-1,-1};  
 }
-
-  // Вывод матрицы произведения
-//  cout << "Матрица произведения" << endl;
-//  for (int i = 0; i < row1; i++)
-//  {
-//    for (int j = 0; j < col2; j++)
-//      cout << c[i][j] << " ";
-//    cout << endl;
-//  }
-//  cin.get(); cin.get();
-//  return 0;
-//}
-
 
 
 Console.Clear();
@@ -55,15 +45,15 @@ PrintMatrix(matrix);
 
 Console.WriteLine("matrix1");
 int[,] matrix1 = CreateMatrix(m, n, 1, 100);
-PrintMatrix(matrix1, matrix1);                  //Что указать в аргумент?
+ProductMatrix(matrix1, matrix1);                  //Что указать в аргумент?
 PrintMatrix(matrix);
 
-
-
-
-
-
-
+Console.WriteLine("Произведение 2-х матриц: ");
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix2.GetLength(1); j++)
+            Console.WriteLine($"{matrix2[i,j]}" + " ");
+    }
 
 
 
